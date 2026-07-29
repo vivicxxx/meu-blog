@@ -1,44 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog</title>
-  <style>
-    header { 
-     background-color: #032E4D;
-     color: #FFC4F1;
-     text-align: center;
-     max-width: 800px;
-     margin: 0 auto;
-     padding: 16px; 
-    }
-    main {
-     background-color: #06035E;
-     color: #FAB1E7;
-     max-width: 800px;
-     margin: 0 auto;
-     padding: 16px;
-    }
-    img { 
-     width: 80px;
-     height: 80px;
-    }
-  </style>
-</head> 
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivicxxx</title>
+    <style>
+        header {
+            background-color: #032E4D;
+            color: #FFC4F1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        main {
+            background-color: #06035E;
+            color: #FAB1E7;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+        article{
+            display: flex;
+            align-items: flex-start; /* Garante alinhamento das imagens no topo do texto */
+            margin-bottom: 24px;    /* Espaço extra entre os posts */
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            margin-right: 16px; /* Adiciona um espacinho entre a imagem e o texto */
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+        }
+
+        /* Estilo básico para os botões aparecerem no fundo escuro */
+        button {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
 <body>
-  <header>
-    <h1>Vivicxxx</h1>
-    <p>Vou compartilhar conhecimentos sobre psicologia e Homem-Aranha, se possível vou misturar os dois</p>
-  </header>
-    
-  <main>
-    <img src="Vivicxxx.png" alt="Logotipo do Vivicxxx em uma cor rosa bebê no canto superior da tela, o perfil da personagem mostra cabelos claros com um jaleco de psicológo, com um olhar atento voltado para o caderno que ela segura."> 
-    <h2>Bem vindos ao Vivicxxx</h2>
-    <p>Por: Vitória de Oliveira</p>
-    <p>Olá, pessoal! Tudo bem? Sejam bem vindos ao cantinho da Vivi!</p>
-    <p>Olá, pessoal! Sejam bem vindos ao meu cantinho. Todos me chamam de Vivi, e criei o Vivicxxx–com essa vibe azul marinho e rosa bebê–para falar sobre temas de psicologia e Homem-Aranha.</p>
-  </main>
+    <header>
+        <h1>Vivicxxx</h1>
+        <p>Vou compartilhar conhecimentos sobre psicologia e Homem-Aranha, se possível vou misturar os dois</p>
+    </header>
+    <main>
+        <article>
+            <img src="Vivicxxx.png"
+                alt="Logotipo do Vivicxxx em rosa bebê: perfil de personagem com cabelos claros e jaleco de psicólogo, olhando atentamente para um caderno.">
+            <div>
+                <h2>Bem vindos ao Vivicxxx</h2>
+                <p class="artigo-autor">Por: Vitória de Oliveira</p>
+                <p>Olá, pessoal! Tudo bem? Sejam bem vindos ao cantinho da Vivi!</p>
+                <p>Criei o Vivicxxx – com essa vibe azul marinho e rosa bebê – para falar sobre temas de psicologia e Homem-Aranha.</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+        
+                <article>
+            <img src="Vivicxxx.png"
+                alt="Logotipo do Vivicxxx em rosa bebê.">
+            <div>
+                <h2>Título do 2º post: O Sentido Aranha e a Intuição</h2>
+                <p class="artigo-autor">Por: Vitória de Oliveira</p>
+                <p>Em breve, vamos analisar o que a psicologia diz sobre aquele "frio na barriga" que o Peter sente.</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+    </main>
 </body>
+<script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach(function (botao) {
+        let curtiu = false;
+        botao.addEventListener("click", botaoClicado);
+        function botaoClicado() {
+            console.log("fui clicado");
+            let texto = botao.querySelector("span");
+            if (curtiu === false){
+                texto.textContent++;
+                curtiu = true;
+            } else{
+                texto.textContent--;
+                curtiu = false;
+            }
+        }
+    })
+</script>
 </html>
